@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "04e787ad-801f-4f48-81c1-ba47b0d7dfb7",
+		"name": "Postman_Newman_Day3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13676248",
+		"_collection_link": "https://interstellar-eclipse-6298.postman.co/workspace/Postman_training~550f1d66-e149-4be9-9473-58a71aa28af0/collection/13676248-04e787ad-801f-4f48-81c1-ba47b0d7dfb7?action=share&source=collection_link&creator=13676248"
+	},
+	"item": [
+		{
+			"name": "Get APIs",
+			"item": [
+				{
+					"name": "Get_activities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Global_day3}}/api/v1/Activities",
+							"host": [
+								"{{Global_day3}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_activities_withID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Global_day3}}/api/v1/Activities/1",
+							"host": [
+								"{{Global_day3}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Activities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Put_Api",
+			"item": [
+				{
+					"name": "PUT_Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": {{id}},\r\n  \"title\": \"{{title}}\",\r\n  \"dueDate\": \"{{dueDate}}\",\r\n  \"completed\": {{completed}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Global_day3}}/api/v1/Activities/0?&title=title&dueDate=dueDate&completed=completed",
+							"host": [
+								"{{Global_day3}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Activities",
+								"0"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "title",
+									"value": "title"
+								},
+								{
+									"key": "dueDate",
+									"value": "dueDate"
+								},
+								{
+									"key": "completed",
+									"value": "completed"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post_Api",
+			"item": [
+				{
+					"name": "POST",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": {{id}},\r\n  \"title\": \"{{title}}\",\r\n  \"dueDate\": \"{{dueDate}}\",\r\n  \"completed\": {{completed}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Global_day3}}/api/v1/Activities?id=id&title=title&dueDate=dueDate&completed=completed",
+							"host": [
+								"{{Global_day3}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Activities"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "id"
+								},
+								{
+									"key": "title",
+									"value": "title"
+								},
+								{
+									"key": "dueDate",
+									"value": "dueDate"
+								},
+								{
+									"key": "completed",
+									"value": "completed"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Global_day3}}/api/v1/Activities/20",
+							"host": [
+								"{{Global_day3}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Activities",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
